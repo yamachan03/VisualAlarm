@@ -51,7 +51,7 @@ open ~/Library/Developer/Xcode/DerivedData/VisualAlarm-*/Build/Products/Debug/Vi
 - `{0}` `{1}` は `L("Next: {0}", value)` のように引数で置き換える
 - 言語は `AppSettings.language`（既定 `.system`）。`AlarmStore.settings` の didSet で `Localization.shared.language` に流し込み、
   ビューは `@Observable` な `Localization.shared` を読んでいるので切り替えは即座に反映される
-- 曜日の短縮形は `Alarm.weekdaySymbol(_:)`、単独で出すときは `Alarm.weekdayName(_:)`（「周五」「금요일」）。
+- 曜日の短縮形は `Alarm.weekdaySymbol(_:)`、単独で出すときは `Alarm.weekdayName(_:)`（「星期五」「금요일」）。
   数値と単位の空白・区切りは `AppLanguage.unitSpace` / `durationJoiner` / `weekdayJoiner` / `listJoiner`
 
 ## 動作確認のコツ

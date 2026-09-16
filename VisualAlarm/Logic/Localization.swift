@@ -216,7 +216,7 @@ final class Localization {
         "Rings: {0}": "{0}响铃",
         "Turns off after ringing once": "响铃一次后自动关闭",
         "Sun": "日", "Mon": "一", "Tue": "二", "Wed": "三", "Thu": "四", "Fri": "五", "Sat": "六",
-        "Sunday": "周日", "Monday": "周一", "Tuesday": "周二", "Wednesday": "周三", "Thursday": "周四", "Friday": "周五", "Saturday": "周六",
+        "Sunday": "星期日", "Monday": "星期一", "Tuesday": "星期二", "Wednesday": "星期三", "Thursday": "星期四", "Friday": "星期五", "Saturday": "星期六",
         "Today {0}": "今天 {0}",
         "Tomorrow {0}": "明天 {0}",
 
@@ -301,7 +301,7 @@ final class Localization {
         "Rings: {0}": "{0}響鈴",
         "Turns off after ringing once": "響鈴一次後自動關閉",
         "Sun": "日", "Mon": "一", "Tue": "二", "Wed": "三", "Thu": "四", "Fri": "五", "Sat": "六",
-        "Sunday": "週日", "Monday": "週一", "Tuesday": "週二", "Wednesday": "週三", "Thursday": "週四", "Friday": "週五", "Saturday": "週六",
+        "Sunday": "星期日", "Monday": "星期一", "Tuesday": "星期二", "Wednesday": "星期三", "Thursday": "星期四", "Friday": "星期五", "Saturday": "星期六",
         "Today {0}": "今天 {0}",
         "Tomorrow {0}": "明天 {0}",
 
