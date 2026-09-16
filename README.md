@@ -2,6 +2,8 @@
 
 [English](README.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [繁體中文](README.zh-Hant.md) · [한국어](README.ko.md)
 
+**The alarm you can't miss.**
+
 A menu bar alarm and timer for macOS that gets your attention with **the screen alone** — no sound, no notification banners.
 
 - Five seconds before the time, balloon-style digits **5 · 4 · 3 · 2 · 1** fill the screen and get sucked into the center, pop, deflate, or drop away

@@ -16,6 +16,18 @@ App Store Connect に貼り付ける文言。文字数上限: 名前 30 / サブ
 - **スクリーンショット**: `docs/appstore/screenshots/{en,ja,zh-Hans,zh-Hant,ko}/` の 2880×1800（各言語 3 枚）
 - 名前「VisualAlarm」が取られていた場合の候補: 「VisualAlarm – Silent Alarm」「VisualAlarm: Screen Alarm」
 
+## キャッチコピー
+
+全言語で「絶対に見逃さないアラーム」で統一する（サブタイトルと説明の 1 行目）。
+
+| 言語 | コピー |
+|---|---|
+| 日本語 | 絶対に見逃さないアラーム |
+| English | The alarm you can't miss |
+| 简体中文 | 绝不会错过的闹钟 |
+| 繁體中文 | 絕不會錯過的鬧鐘 |
+| 한국어 | 절대 놓치지 않는 알람 |
+
 ## 審査メモ（Notes for Review, 英語）
 
 ```
@@ -37,12 +49,14 @@ The app is sandboxed, has no network access, and stores only its own preferences
 
 **Name**: VisualAlarm
 
-**Subtitle**: Silent alarm you can't miss
+**Subtitle**: The alarm you can't miss
 
 **Promotional text**:
 An alarm and timer that alerts with the screen alone. Balloon-digit countdown, full-screen label, and it never steals your keyboard.
 
 **Description**:
+The alarm you can't miss.
+
 VisualAlarm gets your attention with the screen — no sound, no notification banners.
 
 Five seconds before the time, big balloon-style digits fill the screen and get sucked into the center, pop, deflate or drop away. At the set time, every display shows the label you typed — "Call Sam", "Stand-up meeting", "Take the bread out" — in huge letters on a calm green or blue background. You will know what it was for.
@@ -77,12 +91,14 @@ alarm,timer,silent,visual,menu bar,countdown,reminder,fullscreen,pomodoro,focus,
 
 **名前**: VisualAlarm
 
-**サブタイトル**: 音を出さずに、画面で知らせるアラーム
+**サブタイトル**: 絶対に見逃さないアラーム
 
 **プロモーションテキスト**:
 音も通知も使わず、画面だけで知らせるアラーム／タイマー。風船文字のカウントダウン、全画面のラベル表示、キー入力を奪わない設計。
 
 **説明**:
+絶対に見逃さないアラーム。
+
 VisualAlarm は、音や通知バナーではなく「画面の見た目」で知らせるアラーム／タイマーです。
 
 設定時刻の 5 秒前から、画面いっぱいの風船文字「5・4・3・2・1」が中央に吸い込まれたり、破裂したり、落ちたりします。時刻になると、セットしたラベル──「〇〇さんに電話」「朝会」「パンをオーブンから出す」──を全ディスプレイに大きく表示。何のアラームだったか、忘れていても一目でわかります。
@@ -117,12 +133,14 @@ VisualAlarm は、音や通知バナーではなく「画面の見た目」で�
 
 **名称**: VisualAlarm
 
-**副标题**: 无声、看得见的闹钟与计时器
+**副标题**: 绝不会错过的闹钟
 
 **推广文本**:
 不用声音、不用通知，只用屏幕提醒你的闹钟和计时器。气球数字倒计时、全屏标签显示，绝不打断你的输入。
 
 **描述**:
+绝不会错过的闹钟。
+
 VisualAlarm 用屏幕本身来提醒你——没有声音，也没有通知横幅。
 
 设定时间前 5 秒，巨大的气球数字铺满屏幕，被吸入中央、爆开、泄气或坠落。到点时，所有显示器都会以大字显示你输入的标签——"给小王打电话""站会""把面包拿出烤箱"——配上柔和的绿色或蓝色背景。你一眼就知道这个提醒是为了什么。
@@ -157,12 +175,14 @@ VisualAlarm 用屏幕本身来提醒你——没有声音，也没有通知横�
 
 **名稱**: VisualAlarm
 
-**副標題**: 無聲、看得見的鬧鐘與計時器
+**副標題**: 絕不會錯過的鬧鐘
 
 **推廣文字**:
 不用聲音、不用通知，只用螢幕提醒你的鬧鐘與計時器。氣球數字倒數、全螢幕標籤顯示，絕不打斷你的輸入。
 
 **描述**:
+絕不會錯過的鬧鐘。
+
 VisualAlarm 用螢幕本身來提醒你——沒有聲音，也沒有通知橫幅。
 
 設定時間前 5 秒，巨大的氣球數字鋪滿螢幕，被吸入中央、爆開、洩氣或墜落。時間一到，所有顯示器都會以大字顯示你輸入的標籤——「打電話給小王」「站立會議」「把麵包拿出烤箱」——搭配柔和的綠色或藍色背景。你一眼就知道這個提醒是為了什麼。
@@ -197,12 +217,14 @@ VisualAlarm 用螢幕本身來提醒你——沒有聲音，也沒有通知橫�
 
 **이름**: VisualAlarm
 
-**부제**: 소리 없이 화면으로 알리는 알람
+**부제**: 절대 놓치지 않는 알람
 
 **프로모션 텍스트**:
 소리도 알림도 없이 화면만으로 알려주는 알람·타이머. 풍선 숫자 카운트다운, 전체 화면 라벨 표시, 그리고 절대 입력을 방해하지 않습니다.
 
 **설명**:
+절대 놓치지 않는 알람.
+
 VisualAlarm은 소리나 알림 배너 대신 화면 자체로 알려주는 알람·타이머입니다.
 
 설정 시간 5초 전부터 화면 가득한 풍선 숫자가 중앙으로 빨려 들어가거나, 터지거나, 바람이 빠지거나, 떨어집니다. 시간이 되면 모든 디스플레이에 입력해 둔 라벨 — "김 대리에게 전화", "스탠드업 미팅", "오븐에서 빵 꺼내기" — 을 차분한 초록·파랑 배경 위에 큼직하게 표시합니다. 무엇을 위한 알람이었는지 바로 알 수 있습니다.
