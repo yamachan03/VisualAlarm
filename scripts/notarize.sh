@@ -8,17 +8,18 @@
 #      xcrun notarytool store-credentials "visualalarm-notary" \
 #        --apple-id <apple-id> --team-id 7JSPUB92B6 --password <app-specific-password>
 #
-# Usage: ./scripts/notarize.sh
+# Usage: ./scripts/notarize.sh            (or NOTARY_PROFILE=<other-profile> ./scripts/notarize.sh)
 # Output: build/export/VisualAlarm.app (signed, notarized, stapled) and build/VisualAlarm.zip
 #
 # Day-to-day Debug builds stay ad-hoc signed (see project.yml); the Developer ID
-# team and signing style are passed on the command line only for this release build.
+# team and signing style are passed on the command line only for this release build;
+# the export step re-signs with the Developer ID certificate.
 
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}"
-PROFILE="visualalarm-notary"
+PROFILE="${NOTARY_PROFILE:-visualalarm-notary}"
 TEAM_ID="7JSPUB92B6"
 BUILD_DIR="build"
 
@@ -26,7 +27,7 @@ echo "==> 1/6 Archiving (Release)"
 rm -rf "$BUILD_DIR"
 xcodebuild -project VisualAlarm.xcodeproj -scheme VisualAlarm -configuration Release \
   archive -archivePath "$BUILD_DIR/VisualAlarm.xcarchive" -quiet \
-  DEVELOPMENT_TEAM="$TEAM_ID" CODE_SIGN_STYLE=Automatic CODE_SIGN_IDENTITY="Developer ID Application"
+  DEVELOPMENT_TEAM="$TEAM_ID" CODE_SIGN_STYLE=Automatic CODE_SIGN_IDENTITY="Apple Development"
 
 echo "==> 2/6 Exporting with Developer ID signing"
 cat > "$BUILD_DIR/ExportOptions.plist" << PLIST
