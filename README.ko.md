@@ -11,13 +11,13 @@
 - 알람(시각 지정)과 타이머(길이 지정, 프리셋 + 직접 입력). 이전 설정은 기록에서 한 번의 클릭으로 다시 설정
 
 <p align="center">
-  <img src="docs/images/countdown-en.png" width="720" alt="Balloon-digit countdown five seconds before the time">
+  <img src="docs/images/countdown-ko.png" width="720" alt="Balloon-digit countdown five seconds before the time">
 </p>
 <p align="center">
-  <img src="docs/images/ringing-en.png" width="720" alt="Full-screen label display at the set time">
+  <img src="docs/images/ringing-ko.png" width="720" alt="Full-screen label display at the set time">
 </p>
 <p align="center">
-  <img src="docs/images/panel-en.png" width="360" alt="Menu bar panel with timers, alarms and history">
+  <img src="docs/images/panel-ko.png" width="360" alt="Menu bar panel with timers, alarms and history">
 </p>
 
 이런 분께:

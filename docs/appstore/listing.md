@@ -13,7 +13,7 @@ App Store Connect に貼り付ける文言。文字数上限: 名前 30 / サブ
 - **プライバシーポリシー URL**: https://github.com/yamachan03/VisualAlarm/blob/main/docs/PRIVACY.md
 - **App のプライバシー**: 「データを収集しない」
 - **輸出コンプライアンス**: 暗号化なし（Info.plist に `ITSAppUsesNonExemptEncryption = NO` 済み）
-- **スクリーンショット**: `docs/appstore/screenshots/{en,ja}/` の 2880×1800（英語版は zh / ko の掲載にも流用可）
+- **スクリーンショット**: `docs/appstore/screenshots/{en,ja,zh-Hans,zh-Hant,ko}/` の 2880×1800（各言語 3 枚）
 - 名前「VisualAlarm」が取られていた場合の候補: 「VisualAlarm – Silent Alarm」「VisualAlarm: Screen Alarm」
 
 ## 審査メモ（Notes for Review, 英語）

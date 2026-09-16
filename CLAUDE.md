@@ -60,7 +60,7 @@ open ~/Library/Developer/Xcode/DerivedData/VisualAlarm-*/Build/Products/Debug/Vi
 
 ## スクリーンショット
 
-- `docs/images/`（README 用 1600×1000 と パネル等倍）と `docs/appstore/screenshots/{en,ja}/`（2880×1800）
+- `docs/images/`（README 用 1600×1000 と パネル等倍）と `docs/appstore/screenshots/{en,ja,zh-Hans,zh-Hant,ko}/`（2880×1800）
 - 撮り直すときは: スクラッチに置いた `backdrop.swift`（全ディスプレイをグラデーション壁紙で覆う補助プログラム）を
   起動 → 終了間近のタイマーと見本データを `defaults write` で仕込んで起動 → `screencapture -x -D 1` を連写 →
   16:10 に中央クロップ（上 40px のメニューバーは切る）。パネルは `-D 2` で撮り、ポップオーバー部分だけ切り出す

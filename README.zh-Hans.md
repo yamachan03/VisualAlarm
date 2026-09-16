@@ -11,13 +11,13 @@
 - 闹钟（按时间）与计时器（按时长，预设 + 自由输入）。用过的设置在历史记录里一键重设
 
 <p align="center">
-  <img src="docs/images/countdown-en.png" width="720" alt="Balloon-digit countdown five seconds before the time">
+  <img src="docs/images/countdown-zh-Hans.png" width="720" alt="Balloon-digit countdown five seconds before the time">
 </p>
 <p align="center">
-  <img src="docs/images/ringing-en.png" width="720" alt="Full-screen label display at the set time">
+  <img src="docs/images/ringing-zh-Hans.png" width="720" alt="Full-screen label display at the set time">
 </p>
 <p align="center">
-  <img src="docs/images/panel-en.png" width="360" alt="Menu bar panel with timers, alarms and history">
+  <img src="docs/images/panel-zh-Hans.png" width="360" alt="Menu bar panel with timers, alarms and history">
 </p>
 
 适合你，如果：

@@ -11,13 +11,13 @@
 - 鬧鐘（依時間）與計時器（依長度，預設 + 自由輸入）。用過的設定在歷史記錄裡一鍵重設
 
 <p align="center">
-  <img src="docs/images/countdown-en.png" width="720" alt="Balloon-digit countdown five seconds before the time">
+  <img src="docs/images/countdown-zh-Hant.png" width="720" alt="Balloon-digit countdown five seconds before the time">
 </p>
 <p align="center">
-  <img src="docs/images/ringing-en.png" width="720" alt="Full-screen label display at the set time">
+  <img src="docs/images/ringing-zh-Hant.png" width="720" alt="Full-screen label display at the set time">
 </p>
 <p align="center">
-  <img src="docs/images/panel-en.png" width="360" alt="Menu bar panel with timers, alarms and history">
+  <img src="docs/images/panel-zh-Hant.png" width="360" alt="Menu bar panel with timers, alarms and history">
 </p>
 
 適合你，如果：
