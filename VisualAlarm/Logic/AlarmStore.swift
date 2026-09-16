@@ -13,6 +13,7 @@ final class AlarmStore {
     var settings = AppSettings() {
         didSet {
             overlay.state.settings = settings
+            Localization.shared.language = settings.language
             save()
         }
     }
@@ -42,6 +43,7 @@ final class AlarmStore {
     init() {
         load()
         overlay.state.settings = settings
+        Localization.shared.language = settings.language
         overlay.onStopCountdown = { [weak self] items in self?.stopCountdown(items) }
         overlay.onSnooze = { [weak self] items in self?.snooze(items) }
         startTicking()
@@ -185,7 +187,7 @@ final class AlarmStore {
 
     /// カウントダウンから本番表示までを一通り見せる
     func previewOverlay() {
-        startTimer(seconds: settings.countdownSeconds + 1, label: "テスト表示", kind: .test)
+        startTimer(seconds: settings.countdownSeconds + 1, kind: .test)
     }
 
     private func stopCountdown(_ items: [ScheduledItem]) {

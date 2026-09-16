@@ -55,21 +55,21 @@ struct RingingView: View {
 
                 HStack(spacing: 20 * scale) {
                     Button(action: onDismiss) {
-                        Label("解除", systemImage: "xmark.circle.fill")
+                        Label(L("Dismiss"), systemImage: "xmark.circle.fill")
                     }
                     Button(action: onSnooze) {
-                        Label("スヌーズ \(settings.snoozeMinutes)分", systemImage: "zzz")
+                        Label(L("Snooze {0} min", settings.snoozeMinutes), systemImage: "zzz")
                     }
                 }
                 .buttonStyle(OverlayButtonStyle(scale: scale))
                 .padding(.top, 10 * scale)
 
-                Text("画面のどこかをクリックで解除")
+                Text(L("Click anywhere to dismiss"))
                     .font(.system(size: 20 * scale))
                     .opacity(0.7)
 
                 if !state.countdown.isEmpty {
-                    Text("まもなく: " + state.countdown.map(\.title).joined(separator: "、"))
+                    Text(L("Up next: {0}", state.countdown.map(\.title).joined(separator: Localization.shared.effective == .japanese ? "、" : ", ")))
                         .font(.system(size: 20 * scale))
                         .opacity(0.7)
                 }

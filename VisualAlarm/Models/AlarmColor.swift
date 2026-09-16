@@ -13,14 +13,14 @@ enum AlarmColor: String, Codable, CaseIterable, Identifiable {
 
     var name: String {
         switch self {
-        case .auto: "おまかせ"
-        case .green: "緑"
-        case .mint: "ミント"
-        case .teal: "ティール"
-        case .sky: "空"
-        case .blue: "青"
-        case .indigo: "藍"
-        case .lavender: "ラベンダー"
+        case .auto: L("Auto")
+        case .green: L("Green")
+        case .mint: L("Mint")
+        case .teal: L("Teal")
+        case .sky: L("Sky")
+        case .blue: L("Blue")
+        case .indigo: L("Indigo")
+        case .lavender: L("Lavender")
         }
     }
 

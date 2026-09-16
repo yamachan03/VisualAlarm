@@ -12,6 +12,7 @@ struct AppSettings: Codable, Equatable {
     /// 0 なら手動で解除するまで表示し続ける
     var autoDismissSeconds: Int = 0
     var showTimerInMenuBar: Bool = true
+    var language: AppLanguage = .system
 
     static let defaultPresets = [60, 180, 300, 600, 900, 1800, 2700, 3600]
 
@@ -27,5 +28,6 @@ struct AppSettings: Codable, Equatable {
         snoozeMinutes = try c.decodeIfPresent(Int.self, forKey: .snoozeMinutes) ?? snoozeMinutes
         autoDismissSeconds = try c.decodeIfPresent(Int.self, forKey: .autoDismissSeconds) ?? autoDismissSeconds
         showTimerInMenuBar = try c.decodeIfPresent(Bool.self, forKey: .showTimerInMenuBar) ?? showTimerInMenuBar
+        language = try c.decodeIfPresent(AppLanguage.self, forKey: .language) ?? language
     }
 }

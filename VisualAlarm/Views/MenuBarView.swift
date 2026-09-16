@@ -122,7 +122,7 @@ struct MainPanel: View {
             Text("VisualAlarm").font(.headline)
             Spacer()
             if let next = store.nextAlarm {
-                Text("次: \(TimeFormatting.upcoming(next.date, now: store.now))")
+                Text(L("Next: {0}", TimeFormatting.upcoming(next.date, now: store.now)))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -130,7 +130,7 @@ struct MainPanel: View {
                 Image(systemName: "gearshape")
             }
             .buttonStyle(.plain)
-            .help("設定")
+            .help(L("Settings"))
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 10)
@@ -138,10 +138,10 @@ struct MainPanel: View {
 
     private var footer: some View {
         HStack {
-            Button("テスト表示") { store.previewOverlay() }
-                .help("カウントダウンから本番表示までを一通り見せます")
+            Button(L("Test")) { store.previewOverlay() }
+                .help(L("Runs the countdown and the full-screen display once"))
             Spacer()
-            Button("終了") { NSApplication.shared.terminate(nil) }
+            Button(L("Quit")) { NSApplication.shared.terminate(nil) }
         }
         .padding(12)
     }
@@ -162,7 +162,7 @@ struct TimerSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            SectionTitle("タイマー")
+            SectionTitle(L("Timer"))
 
             ForEach(store.sortedTimers) { timer in
                 TimerRow(timer: timer)
@@ -174,30 +174,30 @@ struct TimerSection: View {
                         store.startTimer(seconds: preset)
                     }
                     .contextMenu {
-                        Button("プリセットから削除", role: .destructive) { store.removePreset(preset) }
+                        Button(L("Remove Preset"), role: .destructive) { store.removePreset(preset) }
                     }
                 }
             }
 
             HStack(spacing: 4) {
                 NumberField(value: $hours, range: 0...23, width: 34)
-                Text("時間").font(.caption)
+                Text(L("h")).font(.caption)
                 NumberField(value: $minutes, range: 0...59, width: 34)
-                Text("分").font(.caption)
+                Text(L("min")).font(.caption)
                 NumberField(value: $seconds, range: 0...59, width: 34)
-                Text("秒").font(.caption)
+                Text(L("s")).font(.caption)
                 Spacer(minLength: 4)
-                Button("開始") {
+                Button(L("Start")) {
                     store.startTimer(seconds: totalSeconds, label: label)
                     label = ""
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(totalSeconds < 1)
             }
-            TextField("ラベル（任意）例: 〇〇さんに電話", text: $label)
+            TextField(L("Label (optional), e.g. Call Sam"), text: $label)
                 .textFieldStyle(.roundedBorder)
 
-            HistoryList(title: "最近使ったタイマー",
+            HistoryList(title: L("Recent timers"),
                         entries: store.timerHistory,
                         showAll: $showAllHistory,
                         row: { entry in
@@ -235,7 +235,7 @@ struct TimerRow: View {
                     .foregroundStyle(.secondary)
             }
             .buttonStyle(.plain)
-            .help("キャンセル")
+            .help(L("Cancel"))
         }
         .padding(.vertical, 4)
         .padding(.horizontal, 8)
@@ -273,17 +273,17 @@ struct AlarmSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                SectionTitle("アラーム")
+                SectionTitle(L("Alarm"))
                 Spacer()
                 Button(action: onNew) {
                     Image(systemName: "plus")
                 }
                 .buttonStyle(.plain)
-                .help("アラームを追加")
+                .help(L("Add Alarm"))
             }
 
             if store.alarms.isEmpty {
-                Text("アラームはありません")
+                Text(L("No alarms"))
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -299,7 +299,7 @@ struct AlarmSection: View {
                 .frame(maxHeight: 220)
             }
 
-            HistoryList(title: "履歴からセット",
+            HistoryList(title: L("Set from history"),
                         entries: store.alarmHistory,
                         showAll: $showAllHistory,
                         row: { entry in
@@ -380,7 +380,7 @@ struct HistoryList<Entry: Identifiable, Row: View>: View {
                     Text(title).font(.caption).foregroundStyle(.secondary)
                     Spacer()
                     if entries.count > Self.collapsedCount {
-                        Button(showAll ? "閉じる" : "もっと見る（\(entries.count)）") { showAll.toggle() }
+                        Button(showAll ? L("Show less") : L("Show all ({0})", entries.count)) { showAll.toggle() }
                             .buttonStyle(.plain)
                             .font(.caption)
                             .foregroundStyle(Color.accentColor)
@@ -402,7 +402,7 @@ struct HistoryList<Entry: Identifiable, Row: View>: View {
                     .buttonStyle(.plain)
                     .padding(.vertical, 2)
                     .contextMenu {
-                        Button("履歴から削除", role: .destructive) { onDelete(entry) }
+                        Button(L("Remove from History"), role: .destructive) { onDelete(entry) }
                     }
                 }
             }

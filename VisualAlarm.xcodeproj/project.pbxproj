@@ -11,6 +11,7 @@
 		2B78CBDD663031ADE7FF2FFB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8E58690FB813AF67DE3AF /* AppSettings.swift */; };
 		2CBB73F1A00279CA81E7CA75 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCAF37629E71D453146E68 /* CountdownView.swift */; };
 		3869CFAC0E8AF4A23BB0CB4D /* AlarmEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070552A88469ACE545586EE7 /* AlarmEditorView.swift */; };
+		3FED60566B7E64C791074F1D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D1E04B7FA797872B8EC6F /* Localization.swift */; };
 		41B58A65875A5EB0C9CECCB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8B6435F2E85328FD144B2 /* AppDelegate.swift */; };
 		4DA0B7EA4188E94447319EC1 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE92150F08591444277D21 /* LaunchAtLogin.swift */; };
 		72B48ECCFE137B8511131E4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342718E40AC10AAD8CF42684 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		99D72801E1BC24365472356F /* OverlayRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayRootView.swift; sourceTree = "<group>"; };
 		BAB8B6435F2E85328FD144B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8F8E58690FB813AF67DE3AF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		CE3D1E04B7FA797872B8EC6F /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		E4A7F774ABB391D553F04215 /* BalloonDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonDigit.swift; sourceTree = "<group>"; };
 		E88FE80754441BE41880B492 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		ED79AF4FD555368806E2C1A4 /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				7AF5C416823BECC965469A93 /* AlarmStore.swift */,
 				95FE92150F08591444277D21 /* LaunchAtLogin.swift */,
+				CE3D1E04B7FA797872B8EC6F /* Localization.swift */,
 				17A26FEA6B1AA0A760D7D0E8 /* OverlayController.swift */,
 				ED79AF4FD555368806E2C1A4 /* TimeFormatting.swift */,
 			);
@@ -211,6 +214,7 @@
 				2CBB73F1A00279CA81E7CA75 /* CountdownView.swift in Sources */,
 				76E0019154207138DD87106B /* History.swift in Sources */,
 				4DA0B7EA4188E94447319EC1 /* LaunchAtLogin.swift in Sources */,
+				3FED60566B7E64C791074F1D /* Localization.swift in Sources */,
 				11A8D72C196E2FE6193C7D3E /* MenuBarView.swift in Sources */,
 				B6BA83EF93A0B547DEAB7A4D /* OverlayController.swift in Sources */,
 				951D63DA739C2ADCE6B2515F /* OverlayRootView.swift in Sources */,

@@ -28,36 +28,36 @@ struct AlarmEditorView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            PanelHeader(title: isNew ? "新規アラーム" : "アラームを編集", onBack: onClose)
+            PanelHeader(title: isNew ? L("New Alarm") : L("Edit Alarm"), onBack: onClose)
             Divider()
 
             VStack(alignment: .leading, spacing: 14) {
-                LabeledContent("時刻") {
+                LabeledContent(L("Time")) {
                     DatePicker("", selection: $time, displayedComponents: .hourAndMinute)
                         .datePickerStyle(.stepperField)
                         .labelsHidden()
                 }
 
-                LabeledContent("ラベル") {
-                    TextField("例: 〇〇さんに電話", text: $draft.label)
+                LabeledContent(L("Label")) {
+                    TextField(L("e.g. Call Sam"), text: $draft.label)
                         .textFieldStyle(.roundedBorder)
                 }
 
-                LabeledContent("色") {
+                LabeledContent(L("Color")) {
                     ColorSwatchPicker(selection: $draft.color)
                 }
 
-                DisclosureGroup("詳細", isExpanded: $showDetails) {
+                DisclosureGroup(L("Details"), isExpanded: $showDetails) {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("繰り返し").font(.caption).foregroundStyle(.secondary)
+                        Text(L("Repeat")).font(.caption).foregroundStyle(.secondary)
                         WeekdayPicker(selection: $draft.repeatWeekdays)
                         HStack(spacing: 6) {
-                            Button("なし") { draft.repeatWeekdays = [] }
-                            Button("毎日") { draft.repeatWeekdays = Alarm.everyDay }
-                            Button("平日") { draft.repeatWeekdays = Alarm.weekdays }
+                            Button(L("None")) { draft.repeatWeekdays = [] }
+                            Button(L("Every day")) { draft.repeatWeekdays = Alarm.everyDay }
+                            Button(L("Weekdays")) { draft.repeatWeekdays = Alarm.weekdays }
                         }
                         .controlSize(.small)
-                        Text(draft.repeats ? "\(draft.repeatDescription)に鳴らします" : "1回鳴ったら無効になります")
+                        Text(draft.repeats ? L("Rings: {0}", draft.repeatDescription) : L("Turns off after ringing once"))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -70,14 +70,14 @@ struct AlarmEditorView: View {
 
             HStack {
                 if !isNew {
-                    Button("削除", role: .destructive) {
+                    Button(L("Delete"), role: .destructive) {
                         store.remove(alarmID: draft.id)
                         onClose()
                     }
                 }
                 Spacer()
-                Button("キャンセル", action: onClose)
-                Button("保存", action: save)
+                Button(L("Cancel"), action: onClose)
+                Button(L("Save"), action: save)
                     .buttonStyle(.borderedProminent)
                     .keyboardShortcut(.defaultAction)
             }
@@ -112,7 +112,7 @@ struct WeekdayPicker: View {
                 Button {
                     if isOn { selection.remove(day) } else { selection.insert(day) }
                 } label: {
-                    Text(Alarm.weekdaySymbols[day - 1])
+                    Text(Alarm.weekdaySymbol(day))
                         .font(.callout.weight(.medium))
                         .frame(width: 30, height: 30)
                         .background(Circle().fill(isOn ? Color.accentColor : Color.secondary.opacity(0.15)))

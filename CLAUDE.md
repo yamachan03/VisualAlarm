@@ -43,6 +43,15 @@ open ~/Library/Developer/Xcode/DerivedData/VisualAlarm-*/Build/Products/Debug/Vi
   `AppSettings` は欠けたキーを既定値で埋めるので、項目を増やしても古いデータを読める
 - アプリアイコンは CoreGraphics で描いた 1024px を `sips` で縮小したもの（ティール→青のグラデーション、白い目覚まし時計、放射状の光）
 
+## 文言（日本語／英語）
+
+- すべての UI 文言は `L("English text")` で引く。英語がキーで、日本語訳は `Logic/Localization.swift` の `japanese` 辞書。
+  辞書にない文言は英語のまま出るので、日本語で見て英語が混ざっていたら訳の追加漏れ
+- `{0}` `{1}` は `L("Next: {0}", value)` のように引数で置き換える
+- 言語は `AppSettings.language`（既定 `.system`）。`AlarmStore.settings` の didSet で `Localization.shared.language` に流し込み、
+  ビューは `@Observable` な `Localization.shared` を読んでいるので切り替えは即座に反映される
+- 曜日の短縮形は `Alarm.weekdaySymbol(_:)`。`TimeFormatting.duration` は日本語なら「1時間30分」、英語なら「1 h 30 min」
+
 ## 動作確認のコツ
 
 - 起動前に `defaults write biz.yamayama.VisualAlarm timers -data <JSON の hex>` で終了間近のタイマーを仕込むと、

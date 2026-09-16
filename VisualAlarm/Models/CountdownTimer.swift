@@ -20,9 +20,9 @@ struct CountdownTimer: Identifiable, Codable, Equatable {
     var displayTitle: String {
         if !label.isEmpty { return label }
         switch kind {
-        case .normal: return "タイマー終了"
-        case .snooze: return "スヌーズ"
-        case .test: return "テスト表示"
+        case .normal: return L("Time's up")
+        case .snooze: return L("Snooze")
+        case .test: return L("Test")
         }
     }
 

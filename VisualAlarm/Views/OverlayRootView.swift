@@ -25,7 +25,7 @@ struct StopButtonView: View {
 
     var body: some View {
         Button(action: onStop) {
-            Label("停止", systemImage: "xmark.circle.fill")
+            Label(L("Stop"), systemImage: "xmark.circle.fill")
                 .font(.system(size: 24 * scale, weight: .semibold))
                 .padding(.horizontal, 28 * scale)
                 .padding(.vertical, 12 * scale)

@@ -29,12 +29,13 @@ Good for you if:
 5. Re-use anything from *History* / *Recent timers* with one click (right-click to remove an entry)
 6. *Test* runs the whole countdown → full-screen sequence so you can see what it looks like
 
-Settings (gear icon): countdown length (3–10 s), countdown dimming, snooze length, auto-dismiss, launch at login, and more.
+Settings (gear icon): language (follows the system by default — Japanese on a Japanese Mac, English elsewhere — or pick one), countdown length (3–10 s), countdown dimming, snooze length, auto-dismiss, launch at login, and more.
 
 ## Requirements
 
 - macOS 14 or later
 - No permissions needed (the app touches no files, network, or notifications)
+- UI in English and Japanese
 
 ## How it works
 

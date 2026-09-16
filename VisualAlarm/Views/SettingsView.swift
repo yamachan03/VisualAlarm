@@ -7,25 +7,40 @@ struct SettingsView: View {
     @State private var launchAtLogin = LaunchAtLogin.isEnabled
     @State private var launchError: String?
 
-    private let dismissChoices: [(Int, String)] = [
-        (0, "しない"), (10, "10秒"), (30, "30秒"), (60, "1分"), (300, "5分"),
-    ]
+    private let dismissChoices = [0, 10, 30, 60, 300]
     private let snoozeChoices = [1, 3, 5, 10, 15]
+
+    private func dismissLabel(_ seconds: Int) -> String {
+        switch seconds {
+        case 0: L("Never")
+        case ..<60: L("{0} s", seconds)
+        default: L("{0} min", seconds / 60)
+        }
+    }
 
     var body: some View {
         @Bindable var store = store
         VStack(alignment: .leading, spacing: 0) {
-            PanelHeader(title: "設定", onBack: onClose)
+            PanelHeader(title: L("Settings"), onBack: onClose)
             Divider()
 
             Form {
-                Section("表示") {
-                    LabeledContent("標準の色") {
+                Section(L("Language")) {
+                    Picker(L("Language"), selection: $store.settings.language) {
+                        ForEach(AppLanguage.allCases) { language in
+                            Text(language.displayName).tag(language)
+                        }
+                    }
+                    .labelsHidden()
+                }
+
+                Section(L("Display")) {
+                    LabeledContent(L("Default color")) {
                         ColorSwatchPicker(selection: $store.settings.defaultColor)
                     }
-                    Stepper("カウントダウンの秒数: \(store.settings.countdownSeconds)秒",
+                    Stepper(L("Countdown: {0} s", store.settings.countdownSeconds),
                             value: $store.settings.countdownSeconds, in: 3...10)
-                    LabeledContent("カウントダウンの背景の濃さ") {
+                    LabeledContent(L("Countdown dimming")) {
                         HStack {
                             Slider(value: $store.settings.countdownDim, in: 0.1...0.7, step: 0.05)
                             Text("\(Int((store.settings.countdownDim * 100).rounded()))%")
@@ -33,7 +48,7 @@ struct SettingsView: View {
                                 .frame(width: 40, alignment: .trailing)
                         }
                     }
-                    LabeledContent("本番表示の不透明度") {
+                    LabeledContent(L("Full-screen opacity")) {
                         HStack {
                             Slider(value: $store.settings.overlayOpacity, in: 0.5...1.0, step: 0.05)
                             Text("\(Int((store.settings.overlayOpacity * 100).rounded()))%")
@@ -43,19 +58,19 @@ struct SettingsView: View {
                     }
                 }
 
-                Section("動作") {
-                    Picker("スヌーズ", selection: $store.settings.snoozeMinutes) {
+                Section(L("Behavior")) {
+                    Picker(L("Snooze"), selection: $store.settings.snoozeMinutes) {
                         ForEach(snoozeChoices, id: \.self) { minutes in
-                            Text("\(minutes)分").tag(minutes)
+                            Text(L("{0} min", minutes)).tag(minutes)
                         }
                     }
-                    Picker("自動で解除", selection: $store.settings.autoDismissSeconds) {
-                        ForEach(dismissChoices, id: \.0) { choice in
-                            Text(choice.1).tag(choice.0)
+                    Picker(L("Auto-dismiss"), selection: $store.settings.autoDismissSeconds) {
+                        ForEach(dismissChoices, id: \.self) { seconds in
+                            Text(dismissLabel(seconds)).tag(seconds)
                         }
                     }
-                    Toggle("メニューバーに残り時間を表示", isOn: $store.settings.showTimerInMenuBar)
-                    Toggle("ログイン時に起動", isOn: $launchAtLogin)
+                    Toggle(L("Show remaining time in menu bar"), isOn: $store.settings.showTimerInMenuBar)
+                    Toggle(L("Launch at login"), isOn: $launchAtLogin)
                         .onChange(of: launchAtLogin) { _, newValue in
                             do {
                                 try LaunchAtLogin.set(newValue)
@@ -72,13 +87,13 @@ struct SettingsView: View {
                     }
                 }
 
-                Section("履歴") {
-                    Button("履歴を消去", role: .destructive) { store.clearHistory() }
+                Section(L("History")) {
+                    Button(L("Clear History"), role: .destructive) { store.clearHistory() }
                         .disabled(store.alarmHistory.isEmpty && store.timerHistory.isEmpty)
                 }
             }
             .formStyle(.grouped)
-            .frame(height: 480)
+            .frame(height: 540)
         }
     }
 }

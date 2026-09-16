@@ -28,9 +28,9 @@ struct ScheduledItem: Identifiable, Equatable {
         source = .timer(timer.id)
         title = timer.displayTitle
         switch timer.kind {
-        case .normal: subtitle = "\(TimeFormatting.duration(seconds: timer.seconds))のタイマー"
-        case .snooze: subtitle = "スヌーズ（\(TimeFormatting.duration(seconds: timer.seconds))）"
-        case .test: subtitle = "テスト"
+        case .normal: subtitle = L("{0} timer", TimeFormatting.duration(seconds: timer.seconds))
+        case .snooze: subtitle = L("Snooze ({0})", TimeFormatting.duration(seconds: timer.seconds))
+        case .test: subtitle = L("Test")
         }
         color = timer.color.resolved(seed: id)
         fireDate = timer.endDate

@@ -11,22 +11,26 @@ struct Alarm: Identifiable, Codable, Equatable, Hashable {
     var color: AlarmColor = .auto
     var isEnabled: Bool = true
 
-    static let weekdaySymbols = ["日", "月", "火", "水", "木", "金", "土"]
+    private static let weekdayKeys = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+    /// 曜日の短い表示（1=日 … 7=土）
+    static func weekdaySymbol(_ weekday: Int) -> String { L(weekdayKeys[weekday - 1]) }
     static let everyDay: Set<Int> = Set(1...7)
     static let weekdays: Set<Int> = Set(2...6)
 
     var timeString: String { String(format: "%02d:%02d", hour, minute) }
     var repeats: Bool { !repeatWeekdays.isEmpty }
-    var displayTitle: String { label.isEmpty ? "アラーム" : label }
+    var displayTitle: String { label.isEmpty ? L("Alarm") : label }
 
     var repeatDescription: String {
         switch repeatWeekdays {
-        case []: return "1回"
-        case Self.everyDay: return "毎日"
-        case Self.weekdays: return "平日"
-        case [1, 7]: return "週末"
+        case []: return L("Once")
+        case Self.everyDay: return L("Every day")
+        case Self.weekdays: return L("Weekdays")
+        case [1, 7]: return L("Weekends")
         default:
-            return repeatWeekdays.sorted().map { Self.weekdaySymbols[$0 - 1] }.joined()
+            let separator = Localization.shared.effective == .japanese ? "" : ", "
+            return repeatWeekdays.sorted().map { Self.weekdaySymbol($0) }.joined(separator: separator)
         }
     }
 
