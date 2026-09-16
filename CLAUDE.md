@@ -64,6 +64,8 @@ open ~/Library/Developer/Xcode/DerivedData/VisualAlarm-*/Build/Products/Debug/Vi
 - 撮り直すときは: スクラッチに置いた `backdrop.swift`（全ディスプレイをグラデーション壁紙で覆う補助プログラム）を
   起動 → 終了間近のタイマーと見本データを `defaults write` で仕込んで起動 → `screencapture -x -D 1` を連写 →
   16:10 に中央クロップ（上 40px のメニューバーは切る）。パネルは `-D 2` で撮り、ポップオーバー部分だけ切り出す
+- 日本語 README の GIF（`docs/images/demo-ja.gif`）は `screencapture -x -V 11 -D 1` で録画し、ffmpeg で
+  `fps=12, 640px, 128 色, bayer ディザ` に変換したもの（約 1.5MB。sierra ディザにすると 6MB になる）
 - ストア掲載文・審査メモは `docs/appstore/listing.md`、プライバシーポリシーは `docs/PRIVACY.md`
 
 ## 動作確認のコツ

@@ -17,10 +17,7 @@
 - 入力中に割り込まれて、変換中の文字が確定したり作業が止まったりするのが嫌
 
 <p align="center">
-  <img src="docs/images/countdown-ja.png" width="720" alt="設定時刻の 5 秒前からの風船文字カウントダウン">
-</p>
-<p align="center">
-  <img src="docs/images/ringing-ja.png" width="720" alt="設定時刻の全画面ラベル表示">
+  <img src="docs/images/demo-ja.gif" width="720" alt="設定時刻の 5 秒前からの風船文字カウントダウンと、設定時刻の全画面ラベル表示">
 </p>
 <p align="center">
   <img src="docs/images/panel-ja.png" width="360" alt="メニューバーのパネル（タイマー・アラーム・履歴）">
