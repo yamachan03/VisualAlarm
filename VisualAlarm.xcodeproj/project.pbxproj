@@ -11,6 +11,7 @@
 		2B78CBDD663031ADE7FF2FFB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F8E58690FB813AF67DE3AF /* AppSettings.swift */; };
 		2CBB73F1A00279CA81E7CA75 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCAF37629E71D453146E68 /* CountdownView.swift */; };
 		3869CFAC0E8AF4A23BB0CB4D /* AlarmEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070552A88469ACE545586EE7 /* AlarmEditorView.swift */; };
+		3F9CA250B1426FC8DD4F6DE3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BCA001202B2242417BB14D41 /* PrivacyInfo.xcprivacy */; };
 		3FED60566B7E64C791074F1D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D1E04B7FA797872B8EC6F /* Localization.swift */; };
 		41B58A65875A5EB0C9CECCB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8B6435F2E85328FD144B2 /* AppDelegate.swift */; };
 		4DA0B7EA4188E94447319EC1 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE92150F08591444277D21 /* LaunchAtLogin.swift */; };
@@ -46,6 +47,7 @@
 		95FE92150F08591444277D21 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
 		99D72801E1BC24365472356F /* OverlayRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayRootView.swift; sourceTree = "<group>"; };
 		BAB8B6435F2E85328FD144B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCA001202B2242417BB14D41 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C8F8E58690FB813AF67DE3AF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		CE3D1E04B7FA797872B8EC6F /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		E4A7F774ABB391D553F04215 /* BalloonDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonDigit.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				342718E40AC10AAD8CF42684 /* Assets.xcassets */,
+				BCA001202B2242417BB14D41 /* PrivacyInfo.xcprivacy */,
 				6FA19ECE7F6781720373B0EB /* App */,
 				81E57DF666602B8BB79D3486 /* Logic */,
 				3C97C1F3E13A35D7A17C30F6 /* Models */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72B48ECCFE137B8511131E4C /* Assets.xcassets in Resources */,
+				3F9CA250B1426FC8DD4F6DE3 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +238,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VisualAlarm/VisualAlarm.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_APP_SANDBOX = NO;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -285,7 +290,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -299,7 +304,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,7 +351,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -366,7 +371,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -383,8 +388,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VisualAlarm/VisualAlarm.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_APP_SANDBOX = NO;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -1,6 +1,6 @@
 # VisualAlarm
 
-[English](README.md)
+[English](README.md) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [繁體中文](README.zh-Hant.md) · [한국어](README.ko.md)
 
 音も通知も使わず、**画面の見た目だけ**で知らせる macOS のメニューバー常駐アラーム／タイマー。
 
@@ -15,6 +15,16 @@
 - 音を出せない場所で作業していて、通知バナーは見逃してしまう
 - アラームが鳴ったとき「何のためにセットしたんだっけ」となりがち
 - 入力中に割り込まれて、変換中の文字が確定したり作業が止まったりするのが嫌
+
+<p align="center">
+  <img src="docs/images/countdown-ja.png" width="720" alt="設定時刻の 5 秒前からの風船文字カウントダウン">
+</p>
+<p align="center">
+  <img src="docs/images/ringing-ja.png" width="720" alt="設定時刻の全画面ラベル表示">
+</p>
+<p align="center">
+  <img src="docs/images/panel-ja.png" width="360" alt="メニューバーのパネル（タイマー・アラーム・履歴）">
+</p>
 
 ## ダウンロード
 

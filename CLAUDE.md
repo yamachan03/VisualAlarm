@@ -14,7 +14,11 @@ open ~/Library/Developer/Xcode/DerivedData/VisualAlarm-*/Build/Products/Debug/Vi
 
 - `.xcodeproj` は生成物。手で編集しない。ソースは `VisualAlarm/` 配下（`App` `Models` `Logic` `Views`）
 - Deployment target は macOS 14（`@Observable` のため）。外部依存なし。SPM パッケージは追加しないこと
-- アドホック署名（`CODE_SIGN_IDENTITY: "-"`）。App Store 配布はしない前提
+- 日常の Debug ビルドはアドホック署名（`CODE_SIGN_IDENTITY: "-"`）。配布用は `scripts/notarize.sh`（GitHub 用 Developer ID＋公証）
+  と `scripts/appstore.sh`（Mac App Store 用）。どちらもチームと署名方式をコマンドラインで上書きする
+- **App Sandbox 有効**（`VisualAlarm/VisualAlarm.entitlements`）。設定は `~/Library/Containers/biz.yamayama.VisualAlarm/` 内の
+  UserDefaults に入る。`PrivacyInfo.xcprivacy`（データ収集なし、UserDefaults の理由コード CA92.1）をリソースとして同梱
+- バージョンは `project.yml` の `MARKETING_VERSION` / `CURRENT_PROJECT_VERSION`。リリースごとに両方上げて `xcodegen generate`
 - `LSUIElement = true`（Dock に出ない）。`@main` は AppKit の `AppDelegate`。SwiftUI の `App` は使っていない
   （メニューバーのクリックを「本番表示中は解除だけ」に振り分けるため `NSStatusItem` + `NSPopover` を自前で持つ）
 
@@ -53,6 +57,14 @@ open ~/Library/Developer/Xcode/DerivedData/VisualAlarm-*/Build/Products/Debug/Vi
   ビューは `@Observable` な `Localization.shared` を読んでいるので切り替えは即座に反映される
 - 曜日の短縮形は `Alarm.weekdaySymbol(_:)`、単独で出すときは `Alarm.weekdayName(_:)`（「星期五」「금요일」）。
   数値と単位の空白・区切りは `AppLanguage.unitSpace` / `durationJoiner` / `weekdayJoiner` / `listJoiner`
+
+## スクリーンショット
+
+- `docs/images/`（README 用 1600×1000 と パネル等倍）と `docs/appstore/screenshots/{en,ja}/`（2880×1800）
+- 撮り直すときは: スクラッチに置いた `backdrop.swift`（全ディスプレイをグラデーション壁紙で覆う補助プログラム）を
+  起動 → 終了間近のタイマーと見本データを `defaults write` で仕込んで起動 → `screencapture -x -D 1` を連写 →
+  16:10 に中央クロップ（上 40px のメニューバーは切る）。パネルは `-D 2` で撮り、ポップオーバー部分だけ切り出す
+- ストア掲載文・審査メモは `docs/appstore/listing.md`、プライバシーポリシーは `docs/PRIVACY.md`
 
 ## 動作確認のコツ
 
