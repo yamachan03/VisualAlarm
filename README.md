@@ -35,7 +35,7 @@ Settings (gear icon): language (follows the system by default — Japanese on a 
 
 - macOS 14 or later
 - No permissions needed (the app touches no files, network, or notifications)
-- UI in English and Japanese
+- UI in English, Japanese, Simplified and Traditional Chinese, and Korean (follows the system language; switchable in Settings)
 
 ## How it works
 

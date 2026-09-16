@@ -13,8 +13,12 @@ struct Alarm: Identifiable, Codable, Equatable, Hashable {
 
     private static let weekdayKeys = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
+    private static let weekdayLongKeys = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
     /// 曜日の短い表示（1=日 … 7=土）
     static func weekdaySymbol(_ weekday: Int) -> String { L(weekdayKeys[weekday - 1]) }
+    /// 曜日の正式名（「次: 金曜日 07:30」など単独で出すとき用）
+    static func weekdayName(_ weekday: Int) -> String { L(weekdayLongKeys[weekday - 1]) }
     static let everyDay: Set<Int> = Set(1...7)
     static let weekdays: Set<Int> = Set(2...6)
 
@@ -29,8 +33,8 @@ struct Alarm: Identifiable, Codable, Equatable, Hashable {
         case Self.weekdays: return L("Weekdays")
         case [1, 7]: return L("Weekends")
         default:
-            let separator = Localization.shared.effective == .japanese ? "" : ", "
-            return repeatWeekdays.sorted().map { Self.weekdaySymbol($0) }.joined(separator: separator)
+            return repeatWeekdays.sorted().map { Self.weekdaySymbol($0) }
+                .joined(separator: Localization.shared.effective.weekdayJoiner)
         }
     }
 

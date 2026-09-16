@@ -45,12 +45,14 @@ open ~/Library/Developer/Xcode/DerivedData/VisualAlarm-*/Build/Products/Debug/Vi
 
 ## 文言（日本語／英語）
 
-- すべての UI 文言は `L("English text")` で引く。英語がキーで、日本語訳は `Logic/Localization.swift` の `japanese` 辞書。
-  辞書にない文言は英語のまま出るので、日本語で見て英語が混ざっていたら訳の追加漏れ
+- すべての UI 文言は `L("English text")` で引く。英語がキーで、訳は `Logic/Localization.swift` の
+  `japanese` / `simplifiedChinese` / `traditionalChinese` / `korean` 辞書。辞書にない文言は英語のまま出るので、
+  英語が混ざっていたら訳の追加漏れ。4 つの辞書のキーは必ず揃える（キー数で照合できる）
 - `{0}` `{1}` は `L("Next: {0}", value)` のように引数で置き換える
 - 言語は `AppSettings.language`（既定 `.system`）。`AlarmStore.settings` の didSet で `Localization.shared.language` に流し込み、
   ビューは `@Observable` な `Localization.shared` を読んでいるので切り替えは即座に反映される
-- 曜日の短縮形は `Alarm.weekdaySymbol(_:)`。`TimeFormatting.duration` は日本語なら「1時間30分」、英語なら「1 h 30 min」
+- 曜日の短縮形は `Alarm.weekdaySymbol(_:)`、単独で出すときは `Alarm.weekdayName(_:)`（「周五」「금요일」）。
+  数値と単位の空白・区切りは `AppLanguage.unitSpace` / `durationJoiner` / `weekdayJoiner` / `listJoiner`
 
 ## 動作確認のコツ
 

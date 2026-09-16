@@ -69,7 +69,7 @@ struct RingingView: View {
                     .opacity(0.7)
 
                 if !state.countdown.isEmpty {
-                    Text(L("Up next: {0}", state.countdown.map(\.title).joined(separator: Localization.shared.effective == .japanese ? "、" : ", ")))
+                    Text(L("Up next: {0}", state.countdown.map(\.title).joined(separator: Localization.shared.effective.listJoiner)))
                         .font(.system(size: 20 * scale))
                         .opacity(0.7)
                 }

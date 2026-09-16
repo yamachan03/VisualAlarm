@@ -17,11 +17,13 @@ enum TimeFormatting {
         let hours = total / 3600
         let minutes = (total % 3600) / 60
         let seconds = total % 60
+        let language = Localization.shared.effective
+        let space = language.unitSpace
         var parts: [String] = []
-        if hours > 0 { parts.append(Localization.shared.effective == .japanese ? "\(hours)\(L("h"))" : "\(hours) \(L("h"))") }
-        if minutes > 0 { parts.append(Localization.shared.effective == .japanese ? "\(minutes)\(L("min"))" : "\(minutes) \(L("min"))") }
-        if seconds > 0 || parts.isEmpty { parts.append(Localization.shared.effective == .japanese ? "\(seconds)\(L("s"))" : "\(seconds) \(L("s"))") }
-        return parts.joined(separator: Localization.shared.effective == .japanese ? "" : " ")
+        if hours > 0 { parts.append("\(hours)\(space)\(L("h"))") }
+        if minutes > 0 { parts.append("\(minutes)\(space)\(L("min"))") }
+        if seconds > 0 || parts.isEmpty { parts.append("\(seconds)\(space)\(L("s"))") }
+        return parts.joined(separator: language.durationJoiner)
     }
 
     /// 設定時刻からの経過。1 分未満は nil
@@ -40,7 +42,7 @@ enum TimeFormatting {
                           calendar.component(.minute, from: date))
         if calendar.isDate(date, inSameDayAs: now) { return L("Today {0}", time) }
         if calendar.isDateInTomorrow(date) { return L("Tomorrow {0}", time) }
-        let weekday = Alarm.weekdaySymbol(calendar.component(.weekday, from: date))
+        let weekday = Alarm.weekdayName(calendar.component(.weekday, from: date))
         return "\(weekday) \(time)"
     }
 }
