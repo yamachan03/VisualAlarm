@@ -30,7 +30,11 @@
 
 ## 下載
 
-[**下載 VisualAlarm.zip**](https://github.com/yamachan03/VisualAlarm/releases/latest/download/VisualAlarm.zip) — 已由 Apple 簽署並公證。解壓縮後拖入「應用程式」即可執行。
+最簡單的方式是從 Mac App Store 安裝，更新也會自動送達。
+
+<a href="https://apps.apple.com/app/id6812729868"><img src="docs/images/appstore-badge-zh-Hant.svg" alt="從 Mac App Store 下載" height="48"></a>
+
+也可以直接下載：[**VisualAlarm.zip**](https://github.com/yamachan03/VisualAlarm/releases/latest/download/VisualAlarm.zip) — 與商店版本相同，已由 Apple 簽署並公證。解壓縮後拖入「應用程式」即可執行。
 
 ## 使用方法
 

@@ -30,7 +30,11 @@ Good for you if:
 
 ## Download
 
-[**Download VisualAlarm.zip**](https://github.com/yamachan03/VisualAlarm/releases/latest/download/VisualAlarm.zip) — signed and notarized by Apple. Unzip, drop it into *Applications*, and run.
+The easiest way is the Mac App Store. Updates arrive automatically.
+
+<a href="https://apps.apple.com/app/id6812729868"><img src="docs/images/appstore-badge-en.svg" alt="Download on the Mac App Store" height="48"></a>
+
+You can also grab the app directly: [**VisualAlarm.zip**](https://github.com/yamachan03/VisualAlarm/releases/latest/download/VisualAlarm.zip) — the same build, signed and notarized by Apple. Unzip, drop it into *Applications*, and run.
 
 ## Usage
 

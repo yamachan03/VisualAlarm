@@ -27,7 +27,11 @@
 
 ## ダウンロード
 
-[**VisualAlarm.zip をダウンロード**](https://github.com/yamachan03/VisualAlarm/releases/latest/download/VisualAlarm.zip) — Apple の公証済み。解凍して `アプリケーション` に入れるだけで動きます。
+Mac App Store からが一番かんたんです。アップデートも自動で届きます。
+
+<a href="https://apps.apple.com/app/id6812729868"><img src="docs/images/appstore-badge-ja.svg" alt="Mac App Store でダウンロード" height="48"></a>
+
+直接ダウンロードもできます: [**VisualAlarm.zip**](https://github.com/yamachan03/VisualAlarm/releases/latest/download/VisualAlarm.zip) — 同じビルドで、Apple の公証済み。解凍して `アプリケーション` に入れるだけで動きます。
 
 ## 使い方
 

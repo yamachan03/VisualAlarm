@@ -77,7 +77,10 @@ App Store Connect > 該当 App > 「1.0.1 提出準備中」
 
 ## 5. 公開後・次回以降
 
-- 公開されたら README の「Download」の横に App Store バッジを足す（Apple の Marketing Tools でバッジ画像と URL を取得）
+- 公開済み（2026-09-18）。ストアのページは https://apps.apple.com/app/id6812729868 、App Store Connect の Apple ID は 6812729868
+- README のバッジは `docs/images/appstore-badge-*.svg`（Apple の Marketing Tools の公式 SVG。
+  `https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-mac-app-store/black/<locale>`。
+  繁体字は `zh-hk`。`zh-tw` は 404 になる）
 - 更新は「project.yml のバージョンを上げる → `xcodegen generate` → `UPLOAD=1 ./scripts/appstore.sh` → App Store Connect で新バージョンを作ってビルドを選び、What's New を書いて提出」
 - GitHub 版（Developer ID）は `NOTARY_PROFILE=tagfinder-notary ./scripts/notarize.sh` → `gh release create vX.Y.Z build/VisualAlarm.zip`。
   両方とも同じソース・同じ設定（サンドボックス有効）から作るので挙動は同じ
